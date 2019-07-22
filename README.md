@@ -3,9 +3,9 @@
 ## Project Goals
 1. Reproduce a subset of the results from Mohanty et al. 2016\
   a. Mean F1 score of best model: GoogleNet, Transfer Learning, color photos, train 80%/test 20%\
-  b. Accuracy score: apply best model to dataset 1\
+  b. Accuracy score: apply best model to dataset 1
 2. Improve the reproducibility of the code\
-  a. Deliverable: Dockerfile with workflow\
+  a. Deliverable: Dockerfile with workflow
 3. Apply the best model to the EDDMapS invasive plant images\
   a. Deliverable: Github Repository, code, workflow, Dockerfile
   
