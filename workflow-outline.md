@@ -1,44 +1,44 @@
-### Overview
+# Overview
 ['Source'](<https://github.com/salathegroup/plantvillage_deeplearning_paper_analysis>)
 
 ## Inputs
-# Start training
+### Start training
 ./train.sh
 
-# Start the tests
+### Start the tests
 ./test.sh
 
-# Generate results
+### Generate results
 ./results/generate_results.sh
 
 ## Outputs
-# Results folder contents
+### Results folder contents
 - classification reports\
 - confusion matrices\
 - evaluation graphs
 
 
-### plantvillage_deeplearning_paper_dataset/generate_lmdb.sh
+# plantvillage_deeplearning_paper_dataset/generate_lmdb.sh
 
-# come back to this one
+### come back to this one
 create directory: /home/mohanty/data/final_dataset/lmdb/color-80-20
 
 ## Outputs
-# mean_file
+### mean_file
 mean.binaryproto
 
-# lmdb dataset
+### lmdb dataset
 train_db
 
 
-### train_val.prototxt
+# train_val.prototxt
 
 ## Inputs
-# mean_file
+### mean_file
 mean.binaryproto
 create directory: /home/mohanty/data/final_dataset/lmdb/color-80-20
 
-# lmdb dataset
+### lmdb dataset
 train_db
 create directory: /home/mohanty/data/final_dataset/lmdb/color-80-20
 
@@ -46,41 +46,41 @@ create directory: /home/mohanty/data/final_dataset/lmdb/color-80-20
 used in solver.prototxt
 
 
-### solver.prototxt
+# solver.prototxt
 
 ## Inputs
-# Train phase caffe configurations
+### Train phase caffe configurations
 train_val.prototxt
 
-# Snapshot prefixes
+### Snapshot prefixes
 create directory: /scratch/mohanty/AWS_FRESH_RUN/snapshots_final/googLeNet_color-80-20_finetune
 
 
-### train.sh
+# train.sh
 
 ## Inputs
-# Configure solver for caffe
+### Configure solver for caffe
 solver.prototxt
 
-# ImageNet-trained model
+### ImageNet-trained model
 bvlc_googlenet.caffemodel
 
-# Script to call ImageNet-trained model?
+### Script to call ImageNet-trained model?
 download_model_binary.py (caffe repo)
 
 ## Outputs
-# Fill out cafe.log?
+### Fill out cafe.log?
 
 
-### test.sh
+# test.sh
 
 ## Inputs
-# Prototxt configurations corresponding to each snapshot from the training phase
+### Prototxt configurations corresponding to each snapshot from the training phase
 test_prototxt directory and .prototxt files
 
-# Snapshots from training phase
+### Snapshots from training phase
 create directory: /scratch/mohanty/AWS_FRESH_RUN/snapshots_final/googLeNet_color-80-20_finetune
 
 ## Outputs
-# Test logs
+### Test logs
 test_logs directory
