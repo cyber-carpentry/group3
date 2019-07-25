@@ -20,15 +20,49 @@
 
 # plantvillage_deeplearning_paper_dataset/generate_lmdb.sh
 
-### come back to this one
+## Inputs
+names of model configurations (e.g. the best model)
+
+## Outputs
+files lke generate_data_color-80-20.sh
+
+
+# plantvillage_deeplearning_paper_dataset/create_data_distribution.py
+
+run from /home/mohanty/data/final_dataset
+
+## Inputs
+### raw folder in plantvillage_deeplearning_paper_dataset
+raw images
+put in final_dataset
+
+## Leaf map
+leaf_map.json
+list of labels and other info
+
+## Outputs
+### train.txt
+list of images and labels
 create directory: /home/mohanty/data/final_dataset/lmdb/color-80-20
+
+### test.txt
+list of images and labels
+create directory: /home/mohanty/data/final_dataset/lmdb/color-80-20
+
+
+# plantvillage_deeplearning_paper_dataset/generate_data_color-80-20.sh
+
+## Inputs
+### train.txt 
 
 ## Outputs
 ### mean_file
 mean.binaryproto
+create directory: /home/mohanty/data/final_dataset/lmdb/color-80-20
 
 ### lmdb dataset
 train_db
+create directory: /home/mohanty/data/final_dataset/lmdb/color-80-20
 
 
 # train_val.prototxt
@@ -36,11 +70,9 @@ train_db
 ## Inputs
 ### mean_file
 mean.binaryproto
-create directory: /home/mohanty/data/final_dataset/lmdb/color-80-20
 
 ### lmdb dataset
 train_db
-create directory: /home/mohanty/data/final_dataset/lmdb/color-80-20
 
 ## Outputs
 used in solver.prototxt
