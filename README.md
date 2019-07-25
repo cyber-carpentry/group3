@@ -10,9 +10,11 @@ Mohanty et al. used 54,306 images of healthy and infected leaves to train a deep
 1. Use the raw images, sorted into folders by label to create a list of images and labels for training and testing the model
     - Input: raw images and
     - Outputs: train.txt, test.txt
-3. Create a formatted database of train images (80% of the dataset) and test images (20% of the database)
+2. Create a formatted database of train images (80% of the dataset) and test images (20% of the database)
     - Inputs: train.txt, test.txt
     - Outputs: train_db, test_db
+    
+*We create two docker images for this task: 1. jiannancai/caffeprep:latest, the dockerfile is in [`here`](<https://github.com/cyber-carpentry/group3/blob/master/imageList_docker/Dockerfile>); 2. jiannancai/databasegen:latest, the dockerfile is in [`here`](<https://github.com/cyber-carpentry/group3/blob/master/databaseGen_docker/Dockerfile>)*
 
 ## Pull Docker images
 ```
@@ -55,3 +57,5 @@ $ exit
 $ docker volume inspect database_caffe
 # Copy the path in "Mountpoints", which is the <path to your volume>
 $ sudo ls <path to your volume>
+```
+## Thank you for testing, if you have any suggestions or issues, please post in ['Issues'](<https://github.com/cyber-carpentry/group3/issues>)
