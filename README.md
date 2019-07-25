@@ -20,6 +20,9 @@ Mohanty et al. used 54,306 images of healthy and infected leaves to train a deep
 
 ## Tutorial
 
+*Recommended Jestream instance:* \
+Centos 7(7.6) Development GUI v1.41 or ubuntu 18_04 Devel and Docker v1.22, m1.medium size
+
 ### Pull Docker images
 ```
 $ docker pull jiannancai/caffeprep:latest
