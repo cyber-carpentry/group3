@@ -35,7 +35,7 @@ $ docker volume create database_caffe
 ```
 ### Prepare image lists from raw images
 ```
-# git clone author's repo for dataset
+# git clone author's repo for raw images 
 $ docker run --rm --mount source=input_images,target=/input_images jiannancai/caffeprep:latest sh imageList_prep.sh
 $ docker run -it --rm --mount source=input_images,target=/input_images jiannancai/caffeprep:latest sh
 
