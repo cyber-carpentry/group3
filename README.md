@@ -14,19 +14,23 @@ Mohanty et al. used 54,306 images of healthy and infected leaves to train a deep
     - Inputs: train.txt, test.txt
     - Outputs: train_db, test_db
     
-*We create two docker images for this task: 1. jiannancai/caffeprep:latest, the dockerfile is in [`here`](<https://github.com/cyber-carpentry/group3/blob/master/imageList_docker/Dockerfile>); 2. jiannancai/databasegen:latest, the dockerfile is in [`here`](<https://github.com/cyber-carpentry/group3/blob/master/databaseGen_docker/Dockerfile>)*
+*We create two docker images for this task:* 
+1. jiannancai/caffeprep:latest, the dockerfile is in [`here`](<https://github.com/cyber-carpentry/group3/blob/master/imageList_docker/Dockerfile>); 
+2. jiannancai/databasegen:latest, the dockerfile is in [`here`](<https://github.com/cyber-carpentry/group3/blob/master/databaseGen_docker/Dockerfile>)
 
-## Pull Docker images
+## Tutorial
+
+### Pull Docker images
 ```
 $ docker pull jiannancai/caffeprep:latest
 $ docker pull jiannancai/databasegen:latest
 ```
-## Create volumes on your local device
+### Create volumes on your local device
 ```
 $ docker volume create input_images
 $ docker volume create database_caffe
 ```
-## Prepare image lists from raw images
+### Prepare image lists from raw images
 ```
 $ docker run --rm --mount source=input_images,target=/input_images jiannancai/caffeprep:latest sh imageList_prep.sh
 $ docker run -it --rm --mount source=input_images,target=/input_images jiannancai/caffeprep:latest sh
@@ -38,7 +42,7 @@ $ python create_data_distribution.py
 # Exit the container
 $ exit
 ```
-## Prepare caffe database from image lists
+### Prepare caffe database from image lists
 ```
 $ docker run -it --mount source=database_caffe,target=/database_caffe --mount source=input_images,target=/input_images jiannancai/databasegen:latest sh
 
@@ -52,7 +56,7 @@ $ python create_db.py -b lmdb -s -r squash -c 3 -e jpg -C gzip -m ../input_image
 # Exit the container
 $ exit
 ```
-## Check the outputs
+### Check the outputs
 ```
 $ docker volume inspect database_caffe
 # Copy the path in "Mountpoints", which is the <path to your volume>
