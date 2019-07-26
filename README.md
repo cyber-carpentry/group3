@@ -41,7 +41,7 @@ $ docker run --rm --mount source=input_images,target=/input_images jiannancai/ca
 $ docker run -it --rm --mount source=input_images,target=/input_images jiannancai/caffeprep:latest sh
 ```
 Now you are inside the container\
-If you get the error "Key error: <some plant types>" when running the following python code, please re-run it.
+If you get the error "Key error: (some plant types)..." when running the following python code, please re-run it. It seems to be some randomness issue in author's python script.
 ```
 $ python create_data_distribution.py
 ```
